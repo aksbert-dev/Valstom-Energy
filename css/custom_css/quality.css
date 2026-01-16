@@ -1,0 +1,140 @@
+/* =========================================
+   QUALITY PAGE 
+========================================= */
+
+.val-quality-section{
+  padding: 52px 0;
+  background: #f3f4f6;  /* same grey as screenshot */
+  font-family: inherit;
+}
+
+/* Intro */
+.val-quality-intro{
+  margin-bottom: 26px;
+}
+.val-quality-intro p{
+  margin: 0;
+  font-size: 15.6px;
+  line-height: 1.85;
+  color: rgba(17,17,17,0.82);
+}
+
+/* Each row card */
+.val-quality-row{
+  margin-bottom: 20px;
+  padding: 22px 20px;
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Purple gradient accent line on top */
+.val-quality-row::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #7b2ff7, #9b2cff, #ff2e93);
+  opacity: 0.9;
+}
+
+/* Image card */
+.val-quality-img{
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 16px 30px rgba(0,0,0,0.10);
+}
+
+.val-quality-img img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+  transition: transform .55s ease;
+}
+
+.val-quality-img:hover img{
+  transform: scale(1.06);
+}
+
+/* Titles */
+.val-quality-title{
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111;
+}
+
+/* Text */
+.val-quality-text{
+  margin: 0 0 10px;
+  font-size: 15.3px;
+  line-height: 1.75;
+  color: rgba(17,17,17,0.82);
+}
+
+/* Custom bullet list */
+.val-quality-list{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.val-quality-list li{
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 650;
+  line-height: 1.65;
+  color: rgba(17,17,17,0.84);
+}
+
+.val-quality-list li:last-child{ margin-bottom: 0; }
+
+.val-quality-list li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7b2ff7, #ff2e93);
+}
+
+/* Footer */
+.val-quality-footer{
+  margin-top: 26px;
+}
+.val-quality-footer p{
+  margin: 0;
+  font-size: 15.6px;
+  line-height: 1.85;
+  color: rgba(17,17,17,0.80);
+}
+
+/* Load Animations */
+.animate-on-load{
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.animate-on-load.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .7s ease;
+}
+
+/* Responsive */
+@media(max-width:576px){
+  .val-quality-row{ padding: 18px 14px; }
+  .val-quality-title{ font-size: 18px; }
+  .val-quality-img img{ height: 170px; }
+}

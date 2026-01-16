@@ -1,0 +1,433 @@
+/* =========================================
+   SERVICES PAGE
+========================================= */
+
+.service-page-wrap{
+  padding: 44px 0;
+  background: #ffffff;
+}
+
+/* page title */
+.service-page-head{
+  margin-bottom: 26px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.service-page-title{
+  margin: 0;
+  font-size: 30px;
+  font-weight: 900;
+  color: #111;
+  font-family: inherit;
+}
+
+.service-page-title-line{
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg,
+    rgba(123,47,247,0.0),
+    rgba(123,47,247,0.45),
+    rgba(255,46,147,0.45),
+    rgba(123,47,247,0.0)
+  );
+}
+
+/* general service blocks */
+.service-block{
+  margin-bottom: 36px;
+  padding: 26px 24px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #ffffff, #fbfbff);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+}
+
+/* image card */
+.service-img-card{
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 14px 28px rgba(0,0,0,0.10);
+}
+
+.service-img-card img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.service-img-card:hover img{
+  transform: scale(1.06);
+}
+
+/* texts */
+.service-text,
+.service-para{
+  font-family: inherit;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: rgba(17,17,17,0.88);
+}
+
+.service-note{
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 14.5px;
+  color: rgba(17,17,17,0.72);
+}
+
+/* subhead */
+.service-subhead{
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.service-subtitle{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  color: #111;
+  font-family: inherit;
+}
+
+.service-subline{
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(123,47,247,0.0),
+    rgba(123,47,247,0.35),
+    rgba(255,46,147,0.35),
+    rgba(123,47,247,0.0)
+  );
+}
+
+/* bullets */
+.service-bullets{
+  list-style: none;
+  margin: 12px 0 0;
+  padding-left: 0;
+}
+
+.service-bullets li{
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(17,17,17,0.86);
+}
+
+.service-bullets li:last-child{ margin-bottom: 0; }
+
+.service-bullets li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7b2ff7, #ff2e93);
+}
+
+/* banner (Testing & Validation) */
+.service-banner{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  height: 230px;
+  margin-bottom: 36px;
+
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+}
+
+/* 50% visible overlay effect */
+.service-banner-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.32) 55%,
+    rgba(0,0,0,0.08) 100%
+  );
+}
+
+/* inner content */
+.service-banner-content{
+  position: relative;
+  z-index: 2;
+  padding: 34px 26px;
+  max-width: 760px;
+}
+
+.service-banner-content h3{
+  margin: 0 0 10px;
+  font-weight: 900;
+  font-size: 24px;
+  color: #fff;
+}
+
+.service-banner-content p{
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: rgba(255,255,255,0.90);
+}
+
+/* animations on load */
+.animate-on-load{
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.animate-on-load.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .65s ease;
+}
+
+/* responsive */
+@media(max-width:576px){
+  .service-page-title{ font-size: 24px; }
+  .service-block{ padding: 18px 14px; }
+  .service-img-card img{ height: 210px; }
+  .service-banner{ height: auto; }
+  .service-banner-content{ padding: 22px 16px; }
+}
+
+/* ===================================================
+   SERVICE PAGE BLOCKS (COATING + FASTTRACK)
+=================================================== */
+
+.service-page-wrap{
+  padding: 44px 0;
+  background: #ffffff;
+  font-family: inherit;
+}
+
+/* ---------------------------
+   Coating banner (top block)
+---------------------------- */
+.svc-coating-banner{
+  position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.10);
+  margin-bottom: 36px;
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* 50% visible look */
+.svc-coating-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,0.92) 0%,
+    rgba(255,255,255,0.82) 52%,
+    rgba(255,255,255,0.60) 100%
+  );
+}
+
+/* inner */
+.svc-coating-inner{
+  position: relative;
+  z-index: 2;
+  padding: 28px 26px 26px;
+}
+
+/* header */
+.svc-coating-head{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.svc-coating-title{
+  margin: 0;
+  font-weight: 900;
+  font-size: 22px;
+  color: #111;
+}
+
+.svc-coating-line{
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(90deg,
+    rgba(123,47,247,0.0),
+    rgba(123,47,247,0.45),
+    rgba(255,46,147,0.40),
+    rgba(123,47,247,0.0)
+  );
+}
+
+/* text */
+.svc-coating-desc{
+  margin: 0 0 10px;
+  font-size: 15.5px;
+  line-height: 1.8;
+  color: rgba(17,17,17,0.86);
+}
+
+.svc-coating-sub{
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 800;
+  color: rgba(17,17,17,0.88);
+}
+
+.svc-coating-note{
+  margin: 10px 0 0;
+  font-size: 14.5px;
+  color: rgba(17,17,17,0.72);
+}
+
+/* service items */
+.svc-coating-items{
+  margin-top: 6px;
+}
+
+.svc-item{
+  height: 100%;
+  min-height: 78px;
+
+  border-radius: 12px;
+  padding: 14px 10px;
+  text-align: center;
+
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.92);
+
+  font-weight: 800;
+  font-size: 13.5px;
+  color: rgba(17,17,17,0.86);
+
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+.svc-item:hover{
+  transform: translateY(-5px);
+  border-color: rgba(123,47,247,0.50);
+  box-shadow: 0 14px 30px rgba(123,47,247,0.12);
+}
+
+/* ---------------------------
+   Fast track block
+---------------------------- */
+.svc-fasttrack-block{
+  padding: 26px 24px;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #ffffff, #fbfbff);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.05);
+}
+
+/* header */
+.svc-block-head{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.svc-block-title{
+  margin: 0;
+  font-size: 21px;
+  font-weight: 900;
+  color: #111;
+}
+
+.svc-block-line{
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg,
+    rgba(123,47,247,0.0),
+    rgba(123,47,247,0.35),
+    rgba(255,46,147,0.35),
+    rgba(123,47,247,0.0)
+  );
+}
+
+/* image */
+.svc-img-card{
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.10);
+}
+
+.svc-img-card img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  transition: transform .5s ease;
+}
+
+.svc-img-card:hover img{
+  transform: scale(1.06);
+}
+
+/* bullets */
+.svc-bullets{
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.svc-bullets li{
+  position: relative;
+  padding-left: 22px;
+  margin-bottom: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+  color: rgba(17,17,17,0.86);
+}
+
+.svc-bullets li:last-child{ margin-bottom: 0; }
+
+.svc-bullets li::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #7b2ff7, #ff2e93);
+}
+
+/* animations */
+.animate-on-load{
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.animate-on-load.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .65s ease;
+}
+
+/* responsive */
+@media(max-width:576px){
+  .svc-coating-inner{ padding: 20px 14px; }
+  .svc-coating-title{ font-size: 20px; }
+  .svc-fasttrack-block{ padding: 18px 14px; }
+  .svc-img-card img{ height: 210px; }
+  .svc-item{ font-size: 13px; min-height: 70px; }
+}

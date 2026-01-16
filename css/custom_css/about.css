@@ -1,0 +1,146 @@
+/* ==========================================================
+   Valstom About Page 
+========================================================== */
+
+.ve-about-page{
+  --ve-purple: #7b2ff7;
+  --ve-purple2:#9b2cff;
+  --ve-pink: #ff2e93;
+  --ve-dark:#111;
+  --ve-text: rgba(17,17,17,.78);
+
+  background: #fff;
+}
+
+/* Each block */
+.ve-about-page .ve-about-block{
+  position: relative;
+  overflow: hidden;
+  padding: 110px 0;
+}
+
+/* Alternating subtle background */
+.ve-about-page .ve-about-block:nth-child(even){
+  background:
+    radial-gradient(circle at 14% 25%, rgba(123,47,247,.08), transparent 60%),
+    radial-gradient(circle at 82% 40%, rgba(255,46,147,.07), transparent 60%),
+    #fff;
+}
+
+/* Image area */
+.ve-about-page .ve-about-image{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  overflow: hidden;
+}
+
+.ve-about-page .ve-about-left .ve-about-image{ left: 0; }
+.ve-about-page .ve-about-right .ve-about-image{ right: 0; }
+
+.ve-about-page .ve-about-image img{
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block;
+  filter: saturate(1.03) contrast(1.03);
+}
+
+/* Image overlay for readability */
+.ve-about-page .ve-about-image::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,0));
+}
+
+.ve-about-page .ve-about-right .ve-about-image::after{
+  background: linear-gradient(270deg, rgba(255,255,255,.92), rgba(255,255,255,0));
+}
+
+/* Content box */
+.ve-about-page .ve-about-content{
+  max-width: 660px;
+  padding: 18px 34px;
+}
+
+/* Heading */
+.ve-about-page .ve-about-head{
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  margin-bottom: 14px;
+}
+
+.ve-about-page .ve-about-number{
+  font-weight: 900;
+  font-size: 34px;
+  letter-spacing: .5px;
+  background: linear-gradient(90deg, var(--ve-purple), var(--ve-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ve-about-page .ve-about-title{
+  margin: 0;
+  font-weight: 900;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: var(--ve-dark);
+}
+
+/* Paragraph */
+.ve-about-page .ve-about-content p{
+  margin: 0;
+  font-size: 15.6px;
+  line-height: 1.95;
+  color: var(--ve-text);
+}
+
+/* =======================================
+   SCROLL REVEAL ANIMATION (safe + smooth)
+======================================= */
+.ve-about-page .ve-reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+
+.ve-about-page .ve-reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media(max-width: 991px){
+
+  .ve-about-page .ve-about-block{
+    padding: 70px 0;
+  }
+
+  .ve-about-page .ve-about-image{
+    position: relative;
+    width: 100%;
+    height: 320px;
+  }
+
+  .ve-about-page .ve-about-image::after{
+    background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.95));
+  }
+
+  .ve-about-page .ve-about-content{
+    max-width: 100%;
+    padding: 18px 18px;
+  }
+
+  .ve-about-page .ve-about-title{ font-size: 26px; }
+  .ve-about-page .ve-about-number{ font-size: 30px; }
+}
+
+@media(max-width: 480px){
+  .ve-about-page .ve-about-image{
+    height: 250px;
+  }
+  .ve-about-page .ve-about-title{ font-size: 22px; }
+}

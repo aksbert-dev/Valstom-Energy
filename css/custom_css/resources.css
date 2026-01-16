@@ -1,0 +1,165 @@
+/* =========================================
+   RESOURCES PAGE 
+========================================= */
+
+.val-resources-section{
+  padding: 52px 0;
+  background: #f3f4f6; /* same grey */
+  font-family: inherit;
+}
+
+/* block spacing */
+.val-res-block{
+  margin-bottom: 34px;
+}
+
+/* section titles */
+.val-res-title{
+  margin: 0 0 6px;
+  font-weight: 900;
+  font-size: 20px;
+  color: #111;
+}
+
+.val-res-sub{
+  margin: 0 0 18px;
+  font-size: 14.8px;
+  line-height: 1.7;
+  color: rgba(17,17,17,0.72);
+  max-width: 820px;
+}
+
+/* PDF card */
+.val-pdf-card{
+  display: block;
+  height: 100%;
+  text-decoration: none !important;
+
+  background: #fff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 16px 16px;
+
+  box-shadow: 0 14px 28px rgba(0,0,0,0.06);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* gradient top strip */
+.val-pdf-card::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #7b2ff7, #9b2cff, #ff2e93);
+  opacity: 0.92;
+}
+
+/* head */
+.val-pdf-head{
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin-top: 4px;
+}
+
+.val-pdf-icon{
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(123,47,247,0.12);
+  color: #7b2ff7;
+  font-size: 18px;
+}
+
+.val-pdf-title{
+  margin: 0;
+  font-weight: 900;
+  font-size: 14.5px;
+  line-height: 1.35;
+  color: rgba(17,17,17,0.92);
+}
+
+/* description */
+.val-pdf-desc{
+  margin: 10px 0 18px;
+  font-size: 13.6px;
+  line-height: 1.65;
+  color: rgba(17,17,17,0.72);
+  min-height: 64px;
+}
+
+/* footer */
+.val-pdf-footer{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.val-download{
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+  color: rgba(17,17,17,0.80);
+  transition: all .25s ease;
+}
+
+/* hover */
+.val-pdf-card:hover{
+  transform: translateY(-6px);
+  border-color: rgba(123,47,247,0.45);
+  box-shadow: 0 20px 40px rgba(123,47,247,0.12);
+}
+
+.val-pdf-card:hover .val-download{
+  background: linear-gradient(90deg, #7b2ff7, #ff2e93);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 12px 22px rgba(123,47,247,0.18);
+}
+
+/* active click */
+.val-pdf-card:active{
+  transform: translateY(-3px) scale(0.995);
+}
+
+/* news text */
+.val-news-text{
+  margin: 10px 0 0;
+  font-size: 18px;
+  line-height: 1.7;
+  color: rgba(17,17,17,0.65);
+  max-width: 560px;
+}
+
+/* load animation */
+.animate-on-load{
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+.animate-on-load.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .7s ease;
+}
+
+/* responsive */
+@media(max-width:576px){
+  .val-resources-section{ padding: 40px 0; }
+  .val-news-text{ font-size: 16px; }
+}

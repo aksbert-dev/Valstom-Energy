@@ -1,0 +1,293 @@
+/* =========================================================
+   MARKETS WE SERVE - CLEAN PRO ORBIT
+========================================================= */
+
+.val-markets-section{
+  padding: 70px 0;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(123,47,247,0.16), transparent 52%),
+    radial-gradient(circle at 80% 30%, rgba(255,46,147,0.12), transparent 52%),
+    linear-gradient(180deg, #ffffff 0%, #faf7ff 100%);
+}
+
+/* title */
+.val-markets-head{
+  margin-bottom: 50px;
+}
+.val-markets-title{
+  margin: 0 0 10px;
+  font-weight: 900;
+  font-size: 28px;
+  color: #111;
+}
+.val-markets-sub{
+  margin: 0;
+  max-width: 920px;
+  font-size: 15.6px;
+  line-height: 1.9;
+  color: rgba(17,17,17,0.78);
+}
+
+/* wrap */
+.val-orbit-wrap{
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+}
+
+/* ---------- ORBIT CORE ---------- */
+.val-orbit{
+  /* CONTROL VALUES (change only these) */
+  --orbitSize: 620px;
+  --ringSize: 420px;
+  --radius: 270px;
+  --itemSize: 135px;
+
+  width: var(--orbitSize);
+  height: var(--orbitSize);
+  position: relative;
+  display: grid;
+  place-items: center;
+  isolation: isolate; /* huge fix for z-index */
+}
+
+/* dotted ring */
+.val-orbit-ring{
+  position: absolute;
+  width: var(--ringSize);
+  height: var(--ringSize);
+  border-radius: 50%;
+  border: 3px dotted rgba(79,0,79,0.24);
+  box-shadow: inset 0 0 0 18px rgba(123,47,247,0.04);
+  z-index: 1;
+
+  animation: ringRotate 20s linear infinite;
+}
+
+/* rotor rotates all items */
+.val-orbit-rotor{
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  transform-origin: center;
+  animation: outerRotate 28s linear infinite;
+}
+
+/* position items mathematically (NO OVERLAP) */
+.val-orbit-item{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(var(--a))
+    translateY(calc(-1 * var(--radius)))
+    rotate(calc(-1 * var(--a)));
+}
+
+/* keep each item upright while rotor rotates */
+.val-orbit-upright{
+  display: inline-block;
+  text-align: center;
+  transform-origin: center;
+  animation: outerRotateReverse 28s linear infinite;
+}
+
+/* FORCE CIRCLE IMAGE (prevents messy rectangles) */
+.val-orbit-img{
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 999px;
+  overflow: hidden;
+
+  background: #fff;
+  border: 6px solid rgba(255,255,255,0.85);
+  box-shadow: 0 18px 50px rgba(0,0,0,0.14);
+
+  transition: transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+
+/* SUPER IMPORTANT: prevents theme from breaking it */
+.val-orbit-img img{
+  width: 150px !important;
+  height: 150px !important;
+  object-fit: cover !important;
+  display: block !important;
+  border-radius: 999px !important;
+  max-width: none !important;
+}
+
+/* label */
+.val-orbit-label{
+  display: block;
+  margin-top: 10px;
+  font-weight: 900;
+  font-size: 15px;
+  color: #3a003e;
+}
+
+/* hover */
+.val-orbit-item:hover .val-orbit-img{
+  transform: translateY(-6px);
+  border-color: rgba(123,47,247,0.55);
+  box-shadow: 0 30px 80px rgba(123,47,247,0.16);
+}
+
+/* active highlight */
+.val-orbit-item.is-active .val-orbit-img{
+  border-color: rgba(255,46,147,0.65);
+  box-shadow: 0 36px 90px rgba(255,46,147,0.14);
+}
+
+/* CENTER */
+.val-orbit-center{
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  z-index: 6;
+}
+
+.val-orbit-center-bg{
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,255,255,0.20), rgba(0,0,0,0)),
+    linear-gradient(180deg, #2b0036, #43004f);
+  box-shadow: 0 26px 70px rgba(36,0,52,0.28);
+}
+
+.val-orbit-center-text{
+  position: relative;
+  z-index: 2;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1.12;
+  color: #fff;
+  text-align: center;
+}
+
+/* OPTIONAL VERY NICE: pause rotation on hover */
+.val-orbit-wrap:hover .val-orbit-ring,
+.val-orbit-wrap:hover .val-orbit-rotor,
+.val-orbit-wrap:hover .val-orbit-upright{
+  animation-play-state: paused;
+}
+
+/* Animations */
+@keyframes ringRotate{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes outerRotate{ from{transform:rotate(0)} to{transform:rotate(360deg)} }
+@keyframes outerRotateReverse{ from{transform:rotate(0)} to{transform:rotate(-360deg)} }
+
+/* ----------------- RESPONSIVE ----------------- */
+/* scale down orbit rather than break layout */
+@media (max-width: 992px){
+  .val-orbit{
+    --orbitSize: 540px;
+    --ringSize: 380px;
+    --radius: 235px;
+    --itemSize: 122px;
+  }
+  .val-orbit-center{ width: 220px; height: 220px; }
+  .val-orbit-center-text{ font-size: 25px; }
+}
+
+@media (max-width: 768px){
+  /* Switch to clean grid on mobile */
+  .val-orbit{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 18px;
+    padding: 20px 0;
+  }
+
+  .val-orbit-ring,
+  .val-orbit-rotor,
+  .val-orbit-center{
+    display: none;
+  }
+
+  .val-orbit-item{
+    position: static;
+    transform: none;
+    width: 48%;
+  }
+
+  .val-orbit-upright{
+    animation: none;
+  }
+
+  .val-orbit-label{ font-size: 16px; }
+}
+
+@media(max-width: 480px){
+  .val-orbit-item{ width: 100%; }
+}
+.val-orbit-item{
+  z-index: 10;
+}
+.val-orbit-center{
+  z-index: 50;
+}
+
+/* ==========================
+   MOBILE: KEEP ORBIT (SCALED)
+========================== */
+@media (max-width: 768px){
+
+  .val-orbit-wrap{
+    overflow: hidden;
+  }
+
+  .val-orbit{
+    /* shrink orbit smoothly */
+    --orbitSize: 420px;
+    --ringSize: 300px;
+    --radius: 185px;
+    --itemSize: 86px;
+  }
+
+  .val-orbit-center{
+    width: 170px;
+    height: 170px;
+  }
+
+  .val-orbit-center-text{
+    font-size: 20px;
+    line-height: 1.12;
+  }
+
+  .val-orbit-label{
+    font-size: 14px;
+    margin-top: 8px;
+  }
+}
+
+@media (max-width: 480px){
+  .val-orbit{
+    --orbitSize: 360px;
+    --ringSize: 260px;
+    --radius: 165px;
+    --itemSize: 78px;
+  }
+
+  .val-orbit-center{
+    width: 150px;
+    height: 150px;
+  }
+
+  .val-orbit-center-text{
+    font-size: 18px;
+  }
+}

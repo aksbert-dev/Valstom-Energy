@@ -1,0 +1,167 @@
+/* =========================================
+   PRODUCT INFO*/
+
+.product-info-wrapper {
+  background: linear-gradient(180deg, #ffffff, #fbfbff);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  padding: 24px 20px;
+  margin: 20px 0;
+
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Top gradient strip */
+.product-info-wrapper::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #7b2ff7, #9b2cff, #ff2e93);
+  opacity: 0.9;
+}
+
+/* Title */
+.product-title {
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 26px;
+  letter-spacing: 0.3px;
+  margin-bottom: 20px;
+  color: #1b1b1b;
+}
+
+/* Product box (buttons/cards) */
+.product-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  min-height: 96px;
+  padding: 24px 16px;
+
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.10);
+  border-radius: 8px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 19px;
+  line-height: 1.3;
+  text-align: center;
+
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+/* Load animation */
+.product-box.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hover effect */
+.product-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(123, 47, 247, 0.45);
+  box-shadow: 0 12px 26px rgba(123, 47, 247, 0.10);
+}
+
+/* Pressed effect */
+.product-box:active {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Focus outline */
+.product-box:focus {
+  outline: none;
+  border-color: rgba(123, 47, 247, 0.65);
+  box-shadow: 0 0 0 4px rgba(123, 47, 247, 0.12);
+}
+
+/* Active/Selected */
+.product-box.is-active {
+  border-color: rgba(123, 47, 247, 0.80);
+  background: linear-gradient(180deg, rgba(123, 47, 247, 0.09), rgba(255, 46, 147, 0.04));
+  box-shadow: 0 14px 30px rgba(123, 47, 247, 0.14);
+}
+
+/* Active accent bar */
+.product-box.is-active::before {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  top: 10px;
+  height: 3px;
+  border-radius: 50px;
+  background: linear-gradient(90deg, #7b2ff7, #ff2e93);
+}
+
+/* Tick element */
+.product-box .check {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-weight: 900;
+  color: #7b2ff7;
+
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+}
+
+/* Show tick on hover */
+.product-box:hover .check {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Tick stays visible if active */
+.product-box.is-active .check {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Grid spacing */
+.product-grid > [class*="col-"] {
+  margin-bottom: 22px;
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* Remove extra bottom spacing for last row */
+.product-grid > [class*="col-"]:nth-last-child(-n+3) {
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 576px) {
+  .product-info-wrapper {
+    padding: 18px 14px;
+  }
+
+  .product-title {
+    font-size: 24px;
+  }
+
+  .product-box {
+    padding: 16px 12px;
+    min-height: 64px;
+    font-size: 18px;
+  }
+}
