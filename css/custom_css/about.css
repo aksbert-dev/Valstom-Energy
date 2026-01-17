@@ -52,11 +52,6 @@
   content:"";
   position:absolute;
   inset:0;
-  background: linear-gradient(90deg, rgba(255,255,255,.92), rgba(255,255,255,0));
-}
-
-.ve-about-page .ve-about-right .ve-about-image::after{
-  background: linear-gradient(270deg, rgba(255,255,255,.92), rgba(255,255,255,0));
 }
 
 /* Content box */
@@ -77,10 +72,10 @@
   font-weight: 900;
   font-size: 34px;
   letter-spacing: .5px;
-  background: linear-gradient(90deg, var(--ve-purple), var(--ve-pink));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #3c093e !important;
 }
+
+
 
 .ve-about-page .ve-about-title{
   margin: 0;

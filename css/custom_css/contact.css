@@ -43,7 +43,7 @@
   left: 0; top: 0;
   width: 100%;
   height: 5px;
-  background: linear-gradient(90deg, #7b2ff7, #9b2cff, #ff2e93);
+  background: linear-gradient(to right, #6e1771 400%, #b82cbd 100%, #6e1771 100%);
 }
 
 /* Inputs */
@@ -73,7 +73,7 @@
   font-size: 15px;
 
   color: #fff;
-  background: linear-gradient(90deg, #7b2ff7, #ff2e93);
+  background: linear-gradient(to left, #6e1771 400%, #b82cbd 10%, #6e1771 100%);
   box-shadow: 0 14px 28px rgba(123,47,247,0.18);
   transition: transform .25s ease, box-shadow .25s ease;
 }
@@ -163,7 +163,7 @@
   align-items:center;
   gap: 14px;
   text-decoration:none !important;
-  font-weight: 900;
+  font-weight: 400;
   font-size: 16px;
   color: rgba(17,17,17,.88);
   padding: 12px 14px;
@@ -183,7 +183,7 @@
   align-items:center;
   justify-content:center;
   color: #fff;
-  background: linear-gradient(135deg,#7b2ff7,#ff2e93);
+  background: linear-gradient(to right, #6e1771 400%, #b82cbd 100%, #6e1771 100%);
   box-shadow: 0 16px 30px rgba(123,47,247,.20);
   flex: 0 0 auto;
 }
@@ -216,13 +216,13 @@
   justify-content:center;
   flex: 0 0 auto;
   color:#fff;
-  background: linear-gradient(135deg,#7b2ff7,#9b2cff,#ff2e93);
+  background: linear-gradient(to right, #6e1771 400%, #b82cbd 100%, #6e1771 100%);
   box-shadow: 0 16px 32px rgba(123,47,247,.22);
 }
 
 .val-address-text{
   font-size: 14.9px;
-  font-weight: 750;
+  font-weight: 400;
   line-height: 1.75;
   color: rgba(17,17,17,0.82);
 }
